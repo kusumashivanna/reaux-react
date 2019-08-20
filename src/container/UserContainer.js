@@ -1,25 +1,25 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import User from "../USer.js";
-import { GetUser } from "../action/User.action";
+import Test from "../Test.js";
+import { GetUser } from "../action/Useraction.js";
 
 const mapDispatchToProps = dispatch => {
   return {
-    GetUser: () => {
+    GetUsers: () => {
       dispatch(GetUser());
     }
   };
 };
 const mapStateToProps = state => {
   return {
-    data: state
+    UserData: state
   };
 };
 
-const UserContainer= withRouter(
+const UserConatiner = withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(User)
+  )(Test)
 );
-export default UserContainer;
+export default UserConatiner;
